@@ -1,0 +1,630 @@
+
+/* =========================
+   1. GENERAL SETTINGS
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+:root {
+    --pink: #e99ab5;
+    --dark-pink: #c96f91;
+    --light-pink: #fff0f5;
+    --cream: #fffaf8;
+    --text: #674b56;
+}
+
+body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--cream);
+    color: var(--text);
+    overflow-x: hidden;
+}
+
+h1, h2 {
+    font-family: 'Playfair Display', serif;
+}
+
+/* =========================
+   2. NAVIGATION
+========================= */
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 8%;
+    position: absolute;
+    width: 100%;
+    z-index: 10;
+}
+
+.logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    color: var(--dark-pink);
+    text-decoration: none;
+}
+
+.nav-link {
+    color: var(--text);
+    text-decoration: none;
+    font-size: 14px;
+}
+
+/* =========================
+   3. HERO SECTION
+========================= */
+
+.hero {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    padding: 100px 20px;
+    background: linear-gradient(
+        135deg,
+        #fff0f5,
+        #ffe3ed,
+        #fff7f2
+    );
+}
+
+.hero-content {
+    max-width: 750px;
+    animation: fadeUp 1.2s ease;
+}
+
+.eyebrow {
+    color: var(--dark-pink);
+    font-size: 12px;
+    letter-spacing: 3px;
+    font-weight: 600;
+}
+
+.hero h1 {
+    font-size: clamp(42px, 7vw, 75px);
+    line-height: 1.2;
+    margin: 25px 0;
+}
+
+.pink-text {
+    display: block;
+    color: var(--dark-pink);
+    font-style: italic;
+}
+
+.hero-description {
+    max-width: 480px;
+    margin: 0 auto 30px;
+    line-height: 1.9;
+    color: #886d78;
+}
+
+.main-button {
+    border: none;
+    background: var(--dark-pink);
+    color: white;
+    padding: 16px 32px;
+    border-radius: 50px;
+    font-family: inherit;
+    font-size: 14px;
+    cursor: pointer;
+    transition: 0.3s;
+    box-shadow: 0 8px 25px #c96f9130;
+}
+
+.main-button:hover {
+    background: #b9577d;
+    transform: translateY(-4px);
+}
+
+.small-note {
+    margin-top: 20px;
+    font-size: 12px;
+    color: #a98c97;
+}
+
+.hero-decoration {
+    position: absolute;
+    right: 12%;
+    top: 25%;
+    font-size: 80px;
+    color: #e99ab550;
+    animation: float 4s infinite ease-in-out;
+}
+
+/* =========================
+   4. GENERAL SECTIONS
+========================= */
+
+.section {
+    padding: 110px 8%;
+    text-align: center;
+}
+
+.section h2 {
+    font-size: clamp(32px, 5vw, 48px);
+    margin: 20px 0;
+}
+
+.section-description {
+    color: #987f89;
+    margin-bottom: 45px;
+}
+
+/* =========================
+   5. PHOTO GALLERY
+========================= */
+
+.memories {
+    background: #fffaf8;
+}
+
+.photo-gallery {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 35px;
+    flex-wrap: wrap;
+    margin-top: 55px;
+}
+
+.photo-card {
+    background: white;
+    padding: 14px 14px 22px;
+    width: 250px;
+    box-shadow: 0 10px 35px #7e526515;
+    transform: rotate(-3deg);
+    transition: 0.4s;
+}
+
+.photo-card:nth-child(2) {
+    transform: rotate(3deg);
+}
+
+.photo-card:nth-child(3) {
+    transform: rotate(-2deg);
+}
+
+.photo-card:hover {
+    transform: rotate(0deg) translateY(-12px);
+}
+
+.photo-card img {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+}
+
+.photo-card p {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    margin-top: 15px;
+    font-size: 15px;
+}
+
+/* =========================
+   6. LETTER
+========================= */
+
+.letter-section {
+    background: #fff0f5;
+}
+
+.letter-card {
+    max-width: 650px;
+    margin: 40px auto 0;
+    padding: 50px;
+    background: #fffaf8;
+    border-radius: 5px;
+    box-shadow: 0 15px 45px #b66d8515;
+    text-align: left;
+    line-height: 2;
+}
+
+.letter-heading {
+    font-family: 'Playfair Display', serif;
+    font-size: 23px;
+    color: var(--dark-pink);
+    margin-bottom: 25px;
+}
+
+.signature {
+    margin-top: 30px;
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    color: var(--dark-pink);
+    text-align: right;
+}
+
+/* =========================
+   7. BIRTHDAY CAKE
+========================= */
+
+.cake-section {
+    background: #fffaf8;
+}
+
+.cake {
+    width: 180px;
+    height: 180px;
+    position: relative;
+    margin: 65px auto 35px;
+}
+
+.cake-bottom,
+.cake-middle,
+.cake-top {
+    position: absolute;
+    left: 0;
+    width: 180px;
+    border-radius: 12px;
+}
+
+.cake-bottom {
+    height: 65px;
+    bottom: 0;
+    background: #e99ab5;
+}
+
+.cake-middle {
+    height: 55px;
+    bottom: 55px;
+    background: #f6c3d3;
+}
+
+.cake-top {
+    height: 35px;
+    bottom: 100px;
+    background: #ffe0e9;
+    border-radius: 50% 50% 10px 10px;
+}
+
+.candle {
+    position: absolute;
+    width: 12px;
+    height: 45px;
+    background: #fff;
+    border: 1px solid #e99ab5;
+    bottom: 135px;
+    left: 84px;
+    z-index: 2;
+}
+
+.flame {
+    position: absolute;
+    width: 15px;
+    height: 22px;
+    background: #ffbd59;
+    border-radius: 50% 50% 50% 50%;
+    top: -22px;
+    left: -2px;
+    box-shadow: 0 0 20px #ffbd59;
+    animation: flicker 0.5s infinite alternate;
+}
+
+.flame.off {
+    display: none;
+}
+
+.wish-message {
+    color: var(--dark-pink);
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    margin-top: 25px;
+}
+
+/* =========================
+   8. FLOATING HEARTS
+========================= */
+
+.hearts {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 20;
+    overflow: hidden;
+}
+
+.heart {
+    position: absolute;
+    bottom: -30px;
+    color: #e99ab5;
+    animation: rise 7s linear forwards;
+}
+
+/* =========================
+   9. FOOTER
+========================= */
+
+footer {
+    padding: 35px 20px;
+    text-align: center;
+    background: #ffeaf1;
+    color: #a47789;
+    font-size: 13px;
+    line-height: 2;
+}
+
+/* =========================
+   10. ANIMATIONS
+========================= */
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(35px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+@keyframes flicker {
+    from {
+        transform: scale(1);
+    }
+
+    to {
+        transform: scale(1.15);
+    }
+}
+
+@keyframes rise {
+    from {
+        transform: translateY(0) rotate(0);
+        opacity: 0;
+    }
+
+    15% {
+        opacity: 0.8;
+    }
+
+    to {
+        transform: translateY(-110vh) rotate(35deg);
+        opacity: 0;
+    }
+}
+
+/* =========================
+   11. MOBILE RESPONSIVENESS
+========================= */
+
+@media (max-width: 600px) {
+
+    nav {
+        padding: 20px;
+    }
+
+    .logo {
+        font-size: 16px;
+    }
+
+    .hero-decoration {
+        right: 5%;
+        top: 15%;
+        font-size: 45px;
+    }
+
+    .section {
+        padding: 80px 20px;
+    }
+
+    .photo-card {
+        width: 85%;
+        max-width: 300px;
+    }
+
+    .letter-card {
+        padding: 30px 22px;
+    }
+}
+
+/* =========================
+   SECRET ENVELOPE SCREEN
+========================= */
+
+.welcome-screen {
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+    background: linear-gradient(
+        135deg,
+        #fff0f5,
+        #fbd5e3,
+        #fff8f4
+    );
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    padding: 25px;
+    transition: opacity 1s, visibility 1s;
+}
+
+.welcome-screen.hide {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.envelope-container {
+    max-width: 500px;
+    animation: fadeUp 1s ease;
+}
+
+.envelope {
+    font-size: 100px;
+    margin-bottom: 20px;
+    animation: float 3s infinite ease-in-out;
+}
+
+.welcome-label {
+    color: #c96f91;
+    letter-spacing: 3px;
+    font-size: 12px;
+    text-transform: uppercase;
+}
+
+.envelope-container h1 {
+    font-size: 38px;
+    margin: 20px 0;
+    color: #674b56;
+}
+
+.welcome-description {
+    color: #987f89;
+    margin-bottom: 30px;
+    line-height: 1.8;
+}
+
+/* =========================
+   BIRTHDAY COUNTDOWN
+========================= */
+
+.countdown-section {
+    background: #ffeaf1;
+}
+
+.countdown {
+    display: flex;
+    justify-content: center;
+    gap: 18px;
+    flex-wrap: wrap;
+    margin: 40px 0;
+}
+
+.time-box {
+    background: #fffaf8;
+    width: 105px;
+    padding: 25px 10px;
+    border-radius: 18px;
+    box-shadow: 0 8px 25px #c96f9115;
+}
+
+.time-box span {
+    font-family: 'Playfair Display', serif;
+    font-size: 35px;
+    color: #c96f91;
+}
+
+.time-box p {
+    font-size: 12px;
+    color: #987f89;
+    margin-top: 8px;
+}
+
+#countdownMessage {
+    color: #c96f91;
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+}
+
+/* =========================
+   SECRET ENDING
+========================= */
+
+.secret-section {
+    background: linear-gradient(
+        135deg,
+        #fff0f5,
+        #fbd5e3
+    );
+}
+
+.secret-message {
+    display: none;
+    max-width: 600px;
+    margin: 45px auto 0;
+    padding: 45px 35px;
+    background: #fffaf8;
+    border-radius: 20px;
+    box-shadow: 0 15px 40px #c96f9120;
+    animation: fadeUp 1s ease;
+}
+
+.secret-message.show {
+    display: block;
+}
+
+.secret-heart {
+    font-size: 65px;
+    color: #c96f91;
+    margin-bottom: 15px;
+}
+
+.secret-message p {
+    line-height: 2;
+    white-space: pre-line;
+    margin: 25px 0;
+}
+
+.secret-message span {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    color: #c96f91;
+}
+.about-section {
+    text-align: center;
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    max-width: 700px;
+    margin: 35px auto;
+}
+
+.about-card {
+    background: rgba(255, 255, 255, 0.75);
+    padding: 25px 18px;
+    border-radius: 20px;
+    box-shadow: 0 5px 20px rgba(190, 120, 150, 0.10);
+    transition: transform 0.3s ease;
+}
+
+.about-card:hover {
+    transform: translateY(-7px);
+}
+
+.about-card span {
+    font-size: 35px;
+}
+
+.about-card h3 {
+    color: #c47796;
+    margin: 12px 0;
+}
+
+.about-card p {
+    color: #777;
+    line-height: 1.6;
+    font-size: 14px;
+}
+
+@media (max-width: 500px) {
+    .about-grid {
+        grid-template-columns: 1fr;
+    }
+}
